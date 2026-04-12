@@ -41,7 +41,7 @@ export function Loginpage(){
                     navigate("/members")
                 }
                 else{
-                    seterror("Invalid Reg Number")
+                    seterror("• Invalid Reg Number")
                 }
     }
     return (
