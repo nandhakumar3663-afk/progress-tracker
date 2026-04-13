@@ -262,7 +262,7 @@
                     cursor: pointer;
                 }
                 
-
+/*copied from chat gpt for adjusting width configuration as adjusting the width browser*/
 @media (max-width: 1024px) {
     .main-content {
         flex-direction: column;
