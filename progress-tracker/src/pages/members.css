@@ -172,7 +172,7 @@
                 }
                 .progress {
                     height: 10px;
-                    background: white;
+                    background: rgb(255, 255, 255);
                     border-radius: 99px;
                 }
                 .max {
@@ -256,4 +256,5 @@
                 .leaderboard-row.student:hover{
                     background-color:teal;
                     color:white;
+                    cursor: pointer;
                 }

@@ -1,8 +1,20 @@
 import "./members.css";
 import {useLocation} from "react-router-dom"
+import {useState} from "react"
 export default function Members() {
     const location = useLocation();
     const name = location.state?.name
+    const [htmlprogress,sethtmlprogress] = useState(0);
+    const [cprogress,setcprogress] = useState(0);
+    const [linuxprogress,setlinuxprogress] = useState(0);
+    const [cnprogress,setcnprogress] = useState(0);
+    const [saprogress,setsaprogress] = useState(0);
+    const [nodeprogress,setnodeprogress] = useState(0);
+    const [jsprogress,setjsprogress] = useState(0);
+    const [reactprogress,setreactprogress] = useState(0);
+    const [gitprogress,setgitprogress] = useState(0);
+    
+    
   return (
     <>
       <div className="header">
@@ -42,24 +54,52 @@ export default function Members() {
             <div className="row">
               <p>C programming</p>
               <div className="controls">
-                <button>-</button>
-                <span>5</span>
-                <button>+</button>
+                <button onClick={()=>{
+                    if(cprogress<=0){
+                        setcprogress(0);
+                    }
+                    else{
+                        setcprogress(cprogress-1)
+                    }
+                }}>-</button>
+                <span>{cprogress}</span>
+                <button onClick={()=>{
+                    if(cprogress>=6){
+                        setcprogress(6);
+                    }
+                    else{
+                        setcprogress(cprogress+1)
+                    }
+                }}>+</button>
               </div>
-              <div className="blue">5</div>
+              <div className="blue">{cprogress}</div>
               <div className="progress-bar">
                 <div className="progress blue" style={{ width: "60%" }}></div>
               </div>
-              <p className="max">Max: 7</p>
+              <p className="max">Max: 6</p>
             </div>
             <div className="row">
               <p>HTML</p>
               <div className="controls">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
+                <button onClick={()=>{
+                    if(htmlprogress<=0){
+                        sethtmlprogress(0);
+                    }
+                    else{
+                        sethtmlprogress(htmlprogress-1)
+                    }
+                }}>-</button>
+                <span>{htmlprogress}</span>
+                <button onClick={()=>{
+                    if(htmlprogress>=1){
+                        sethtmlprogress(1);
+                    }
+                    else{
+                        sethtmlprogress(htmlprogress+1)
+                    }
+                }}>+</button>
               </div>
-              <div className="blue">1</div>
+              <div className="blue">{htmlprogress}</div>
               <div className="progress-bar">
                 <div className="progress blue" style={{ width: "100%" }}></div>
               </div>
@@ -68,11 +108,25 @@ export default function Members() {
             <div className="row">
               <p>Git Hub</p>
               <div className="controls">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
+                <button onClick={()=>{
+                    if(gitprogress<=0){
+                        setgitprogress(0);
+                    } 
+                    else{
+                        setgitprogress(gitprogress-1)
+                    }
+                }}>-</button>
+                <span>{gitprogress}</span>
+                <button onClick={()=>{
+                    if(gitprogress>=1){
+                        setgitprogress(1);
+                    }
+                    else{
+                        setgitprogress(gitprogress+1)
+                    }
+                }}>+</button>
               </div>
-              <div className="blue">1</div>
+              <div className="blue">{gitprogress}</div>
               <div className="progress-bar">
                 <div className="progress blue" style={{ width: "100%" }}></div>
               </div>
@@ -81,37 +135,79 @@ export default function Members() {
             <div className="row">
               <p>Java Script</p>
               <div className="controls">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
+                <button onClick={()=>{
+                    if(jsprogress<=0){
+                        sethtmlprogress(0);
+                    }
+                    else{
+                        setjsprogress(jsprogress-1)
+                    }
+                }}>-</button>
+                <span>{jsprogress}</span>
+                <button onClick={()=>{
+                    if(jsprogress>=1){
+                        setjsprogress(1);
+                    }
+                    else{
+                        setjsprogress(jsprogress+1)
+                    }
+                }}>+</button>
               </div>
-              <div className="blue">1</div>
+              <div className="blue">{jsprogress}</div>
               <div className="progress-bar">
                 <div className="progress blue" style={{ width: "50%" }}></div>
               </div>
-              <p className="max">Max: 2</p>
+              <p className="max">Max: 1</p>
             </div>
             <div className="row">
               <p>React</p>
               <div className="controls">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
+                <button onClick={()=>{
+                    if(reactprogress<=0){
+                        setreactprogress(0);
+                    }
+                    else{
+                        setreactprogress(reactprogress-1)
+                    }
+                }}>-</button>
+                <span>{reactprogress}</span>
+                <button onClick={()=>{
+                    if(reactprogress>=1){
+                        setreactprogress(1);
+                    }
+                    else{
+                        setreactprogress(reactprogress+1)
+                    }
+                }}>+</button>
               </div>
-              <div className="blue">1</div>
+              <div className="blue">{reactprogress}</div>
               <div className="progress-bar">
                 <div className="progress blue" style={{ width: "33%" }}></div>
               </div>
-              <p className="max">Max: 3</p>
+              <p className="max">Max: 1</p>
             </div>
             <div className="row">
               <p>Node JS</p>
               <div className="controls">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
+                <button onClick={()=>{
+                    if(nodeprogress<=0){
+                        setnodeprogress(0);
+                    }
+                    else{
+                        setnodeprogress(nodeprogress-1)
+                    }
+                }}>-</button>
+                <span>{nodeprogress}</span>
+                <button onClick={()=>{
+                    if(nodeprogress>=1){
+                        setnodeprogress(1);
+                    }
+                    else{
+                        setnodeprogress(nodeprogress+1)
+                    }
+                }}>+</button>
               </div>
-              <div className="blue">1</div>
+              <div className="blue">{nodeprogress}</div>
               <div className="progress-bar">
                 <div className="progress blue" style={{ width: "33%" }}></div>
               </div>
@@ -120,24 +216,52 @@ export default function Members() {
             <div className="row">
               <p>Linux</p>
               <div className="controls">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
+                <button onClick={()=>{
+                    if(linuxprogress<=0){
+                        setlinuxprogress(0);
+                    }
+                    else{
+                        setlinuxprogress(linuxprogress-1)
+                    }
+                }}>-</button>
+                <span>{linuxprogress}</span>
+                <button onClick={()=>{
+                    if(linuxprogress>=2){
+                        setlinuxprogress(2);
+                    }
+                    else{
+                        setlinuxprogress(linuxprogress+1)
+                    }
+                }}>+</button>
               </div>
-              <div className="blue">3</div>
+              <div className="blue">{linuxprogress}</div>
               <div className="progress-bar">
                 <div className="progress blue" style={{ width: "33%" }}></div>
               </div>
-              <p className="max">Max: 3</p>
+              <p className="max">Max: 2</p>
             </div>
             <div className="row">
               <p>System Administration</p>
               <div className="controls">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
+                <button onClick={()=>{
+                    if(saprogress<=0){
+                        setsaprogress(0);
+                    }
+                    else{
+                        setsaprogress(saprogress-1)
+                    }
+                }}>-</button>
+                <span>{saprogress}</span>
+                <button onClick={()=>{
+                    if(saprogress>=2){
+                        setsaprogress(2);
+                    }
+                    else{
+                        setsaprogress(saprogress+1)
+                    }
+                }}>+</button>
               </div>
-              <div className="blue">2</div>
+              <div className="blue">{saprogress}</div>
               <div className="progress-bar">
                 <div className="progress blue" style={{ width: "33%" }}></div>
               </div>
@@ -146,15 +270,29 @@ export default function Members() {
             <div className="row">
               <p>Computer Networking</p>
               <div className="controls">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
+                <button onClick={()=>{
+                    if(cnprogress<=0){
+                        setcnprogress(0);
+                    }
+                    else{
+                        setcnprogress(cnprogress-1)
+                    }
+                }}>-</button>
+                <span>{cnprogress}</span>
+                <button onClick={()=>{
+                    if(cnprogress>=3){
+                        setcnprogress(3);
+                    }
+                    else{
+                        setcnprogress(cnprogress+1)
+                    }
+                }}>+</button>
               </div>
-              <div className="blue">2</div>
+              <div className="blue">{cnprogress}</div>
               <div className="progress-bar">
                 <div className="progress blue" style={{ width: "33%" }}></div>
               </div>
-              <p className="max">Max: 2</p>
+              <p className="max">Max: 3</p>
             </div>
             <div className="rp">
               <p>Reward point</p>
