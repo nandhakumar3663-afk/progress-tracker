@@ -1,6 +1,14 @@
 import "./members.css";
 import {useLocation} from "react-router-dom"
 import {useState} from "react"
+import A from "../assets/A.jpg"
+import D from "../assets/D.jpg"
+import G from "../assets/G.jpg"
+import H from "../assets/H.jpg"
+import K from "../assets/K.jpg"
+import N from "../assets/N.jpg"
+import P from "../assets/P.jpg"
+import R from "../assets/R.jpg"
 export default function Members() {
     const location = useLocation();
     const name = location.state?.name
@@ -14,12 +22,18 @@ export default function Members() {
     const [reactprogress,setreactprogress] = useState(0);
     const [gitprogress,setgitprogress] = useState(0);
     
-    
+    const profile = {A,D,G,H,K,N,P,R}
+    const getprofileimage = (name)=>{
+        if(name){
+            const firstletter = name.trim()[0].toUpperCase();
+            return profile[firstletter];
+        }
+    }
   return (
     <>
       <div className="header">
         <div className="image">
-          <img className="imagetext" src="image.jpg" alt="profile" />
+          <img className="imagetext" src={getprofileimage(name)} alt="profile" />
         </div>
         <div className="name">
           <p className="name1">Welcome {name}</p>
