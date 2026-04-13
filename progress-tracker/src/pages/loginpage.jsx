@@ -2,43 +2,27 @@ import { useState } from "react";
 import { useNavigate} from "react-router-dom"
 import myimage from "../assets/image.jpeg";
 import './loginpage.css'
-export function Loginpage(){
+ function Loginpage(){
     const navigate = useNavigate();
     const [reg,setreg] = useState("");
     const [error,seterror] = useState("");
+    const users = {
+        "7376251cs307": "Nandha Kumar PS",
+        "7376251cs329": "Pavithran S",
+        "7376251cs247": "Kavinesh D",
+        "7376251cs110": "Akash J",
+        "7376251cs167": "Dhinesh R",
+        "7376251cs185": "Gokul BJ",
+        "7376251cs196": "Haffiza S",
+        "7376251cs254": "Keerthana R",
+        "7376251cs353": "Rahul S",
+        "7376251cs372": "Ronisha K",
+        "7376251cs443": "Tamizhoviyan S",
+    }
     const handlelogin= ()=>{
-        if(reg.toLowerCase()==="7376251cs307"){
-                   navigate("/members") 
-                }
-                else if(reg.toLowerCase()==="7376251cs329"){
-                    navigate("/members")
-                }
-                else if(reg.toLowerCase()==="7376251cs247"){
-                    navigate("/members")
-                }
-                else if(reg.toLowerCase()==="7376251cs110"){
-                    navigate("/members")
-                }
-                else if(reg.toLowerCase()==="7376251cs167"){
-                    navigate("/members")
-                }
-                else if(reg.toLowerCase()==="7376251cs185"){
-                    navigate("/members")
-                }
-                else if(reg.toLowerCase()==="7376251cs196"){
-                    navigate("/members")
-                }
-                else if(reg.toLowerCase()==="7376251cs254"){
-                    navigate("/members")
-                }
-                else if(reg.toLowerCase()==="7376251cs353"){
-                    navigate("/members")
-                }
-                else if(reg.toLowerCase()==="7376251cs372"){
-                    navigate("/members")
-                }
-                else if(reg.toLowerCase()==="7376251cs443"){
-                    navigate("/members")
+        const name = users[reg.toLowerCase()]
+        if(name){
+                   navigate("/members",{state: {name: name}}) 
                 }
                 else{
                     seterror("• Invalid Reg Number")
@@ -66,3 +50,4 @@ export function Loginpage(){
         </div>
     )
 }
+export default Loginpage;

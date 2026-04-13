@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { Loginpage } from './pages/loginpage'
-import { Members } from './pages/members'
+import  Loginpage  from './pages/loginpage'
+import  Members  from './pages/members'
 
 import './App.css'
 

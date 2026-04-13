@@ -1,5 +1,8 @@
 import "./members.css";
-export function Members() {
+import {useLocation} from "react-router-dom"
+export default function Members() {
+    const location = useLocation();
+    const name = location.state?.name
   return (
     <>
       <div className="header">
@@ -7,7 +10,7 @@ export function Members() {
           <img className="imagetext" src="image.jpg" alt="profile" />
         </div>
         <div className="name">
-          <p className="name1">Welcome Rahul</p>
+          <p className="name1">Welcome {name}</p>
           <p className="name2">overall dashboard</p>
         </div>
       </div>
