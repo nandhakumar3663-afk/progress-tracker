@@ -38,6 +38,7 @@ import './loginpage.css'
                 seterror("")
             }}
                 onKeyDown={(e) => e.key === "Enter" && handlelogin()}
+                placeHolder="Enter Your Reg No"
                 />
             {error && <p className="error-msg">{error}</p>}
             <button className="loginbtn" onClick={handlelogin}>Login →</button>

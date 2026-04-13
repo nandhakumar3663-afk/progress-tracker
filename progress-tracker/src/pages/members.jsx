@@ -21,6 +21,16 @@ export default function Members() {
     const [jsprogress,setjsprogress] = useState(0);
     const [reactprogress,setreactprogress] = useState(0);
     const [gitprogress,setgitprogress] = useState(0);
+    const [cnwidth,setcnwidth] = useState(0);
+    const [cwidth,setcwidth] = useState(0);
+    const [htmlwidth,sethtmlwidth] = useState(0);
+    const [gitwidth,setgitwidth] = useState(0);
+    const [jswidth,setjswidth] = useState(0);
+    const [reactwidth,setreactwidth] = useState(0);
+    const [nodewidth,setnodewidth] = useState(0);
+    const [sawidth,setsawidth] = useState(0);
+    const [linuxwidth,setlinuxwidth] = useState(0);
+    
     
     const profile = {A,D,G,H,K,N,P,R}
     const getprofileimage = (name)=>{
@@ -74,6 +84,7 @@ export default function Members() {
                     }
                     else{
                         setcprogress(cprogress-1)
+                        setcwidth(cwidth-16.5)
                     }
                 }}>-</button>
                 <span>{cprogress}</span>
@@ -83,12 +94,13 @@ export default function Members() {
                     }
                     else{
                         setcprogress(cprogress+1)
+                        setcwidth(cwidth+16.5)
                     }
                 }}>+</button>
               </div>
               <div className="blue">{cprogress}</div>
               <div className="progress-bar">
-                <div className="progress blue" style={{ width: "60%" }}></div>
+                <div className="progress blue" style={{ width: cwidth+"%" }}></div>
               </div>
               <p className="max">Max: 6</p>
             </div>
@@ -101,6 +113,7 @@ export default function Members() {
                     }
                     else{
                         sethtmlprogress(htmlprogress-1)
+                        sethtmlwidth(htmlwidth-100)
                     }
                 }}>-</button>
                 <span>{htmlprogress}</span>
@@ -110,12 +123,13 @@ export default function Members() {
                     }
                     else{
                         sethtmlprogress(htmlprogress+1)
+                        sethtmlwidth(htmlwidth+100)
                     }
                 }}>+</button>
               </div>
               <div className="blue">{htmlprogress}</div>
               <div className="progress-bar">
-                <div className="progress blue" style={{ width: "100%" }}></div>
+                <div className="progress blue" style={{ width: htmlwidth+"%" }}></div>
               </div>
               <p className="max">Max: 1</p>
             </div>
@@ -128,6 +142,7 @@ export default function Members() {
                     } 
                     else{
                         setgitprogress(gitprogress-1)
+                        setgitwidth(gitwidth-100)
                     }
                 }}>-</button>
                 <span>{gitprogress}</span>
@@ -137,12 +152,13 @@ export default function Members() {
                     }
                     else{
                         setgitprogress(gitprogress+1)
+                        setgitwidth(gitwidth+100)
                     }
                 }}>+</button>
               </div>
               <div className="blue">{gitprogress}</div>
               <div className="progress-bar">
-                <div className="progress blue" style={{ width: "100%" }}></div>
+                <div className="progress blue" style={{ width: gitwidth+"%" }}></div>
               </div>
               <p className="max">Max: 1</p>
             </div>
@@ -151,10 +167,11 @@ export default function Members() {
               <div className="controls">
                 <button onClick={()=>{
                     if(jsprogress<=0){
-                        sethtmlprogress(0);
+                        setjsprogress(0);
                     }
                     else{
                         setjsprogress(jsprogress-1)
+                        setjswidth(jswidth-100)
                     }
                 }}>-</button>
                 <span>{jsprogress}</span>
@@ -164,12 +181,13 @@ export default function Members() {
                     }
                     else{
                         setjsprogress(jsprogress+1)
+                        setjswidth(jswidth+100)
                     }
                 }}>+</button>
               </div>
               <div className="blue">{jsprogress}</div>
               <div className="progress-bar">
-                <div className="progress blue" style={{ width: "50%" }}></div>
+                <div className="progress blue" style={{ width: jswidth+"%" }}></div>
               </div>
               <p className="max">Max: 1</p>
             </div>
@@ -182,6 +200,7 @@ export default function Members() {
                     }
                     else{
                         setreactprogress(reactprogress-1)
+                        setreactwidth(reactwidth-100);
                     }
                 }}>-</button>
                 <span>{reactprogress}</span>
@@ -191,12 +210,13 @@ export default function Members() {
                     }
                     else{
                         setreactprogress(reactprogress+1)
+                        setreactwidth(reactwidth+100);
                     }
                 }}>+</button>
               </div>
               <div className="blue">{reactprogress}</div>
               <div className="progress-bar">
-                <div className="progress blue" style={{ width: "33%" }}></div>
+                <div className="progress blue" style={{ width: reactwidth+"%" }}></div>
               </div>
               <p className="max">Max: 1</p>
             </div>
@@ -209,6 +229,7 @@ export default function Members() {
                     }
                     else{
                         setnodeprogress(nodeprogress-1)
+                        setnodewidth(nodewidth-100)
                     }
                 }}>-</button>
                 <span>{nodeprogress}</span>
@@ -218,12 +239,13 @@ export default function Members() {
                     }
                     else{
                         setnodeprogress(nodeprogress+1)
+                        setnodewidth(nodewidth+100)
                     }
                 }}>+</button>
               </div>
               <div className="blue">{nodeprogress}</div>
               <div className="progress-bar">
-                <div className="progress blue" style={{ width: "33%" }}></div>
+                <div className="progress blue" style={{ width: nodewidth+"%" }}></div>
               </div>
               <p className="max">Max: 1</p>
             </div>
@@ -236,6 +258,7 @@ export default function Members() {
                     }
                     else{
                         setlinuxprogress(linuxprogress-1)
+                        setlinuxwidth(linuxwidth-50)
                     }
                 }}>-</button>
                 <span>{linuxprogress}</span>
@@ -245,12 +268,13 @@ export default function Members() {
                     }
                     else{
                         setlinuxprogress(linuxprogress+1)
+                        setlinuxwidth(linuxwidth+50)
                     }
                 }}>+</button>
               </div>
               <div className="blue">{linuxprogress}</div>
               <div className="progress-bar">
-                <div className="progress blue" style={{ width: "33%" }}></div>
+                <div className="progress blue" style={{ width: linuxwidth+"%" }}></div>
               </div>
               <p className="max">Max: 2</p>
             </div>
@@ -263,6 +287,7 @@ export default function Members() {
                     }
                     else{
                         setsaprogress(saprogress-1)
+                        setsawidth(sawidth-50)
                     }
                 }}>-</button>
                 <span>{saprogress}</span>
@@ -272,12 +297,13 @@ export default function Members() {
                     }
                     else{
                         setsaprogress(saprogress+1)
+                        setsawidth(sawidth+50)
                     }
                 }}>+</button>
               </div>
               <div className="blue">{saprogress}</div>
               <div className="progress-bar">
-                <div className="progress blue" style={{ width: "33%" }}></div>
+                <div className="progress blue" style={{ width: sawidth+"%" }}></div>
               </div>
               <p className="max">Max: 2</p>
             </div>
@@ -290,6 +316,7 @@ export default function Members() {
                     }
                     else{
                         setcnprogress(cnprogress-1)
+                        setcnwidth(cnwidth-33);
                     }
                 }}>-</button>
                 <span>{cnprogress}</span>
@@ -299,22 +326,23 @@ export default function Members() {
                     }
                     else{
                         setcnprogress(cnprogress+1)
+                        setcnwidth(cnwidth+33);
                     }
                 }}>+</button>
               </div>
               <div className="blue">{cnprogress}</div>
               <div className="progress-bar">
-                <div className="progress blue" style={{ width: "33%" }}></div>
+                <div className="progress blue" style={{ width: cnwidth + "%" }}></div>
               </div>
               <p className="max">Max: 3</p>
             </div>
             <div className="rp">
               <p>Reward point</p>
-              <input type="number" />
+              <input type="number" placeHolder="Enter Your RP" />
             </div>
             <div className="ap">
               <p>Activity point</p>
-              <input type="number" />
+              <input type="number" placeHolder="Enter Your AP"/>
             </div>
             <center>
               <button className="saveprogress">Save Progress</button>
@@ -345,10 +373,25 @@ export default function Members() {
           <p>4</p><p>NandhaKumar PS</p><p>4,000</p><p>12,100</p>
         </div>
         <div className="leaderboard-row student">
-          <p>5</p><p>Gokul V</p><p>2,300</p><p>9,100</p>
+          <p>5</p><p>Gokul BJ</p><p>2,300</p><p>9,100</p>
         </div>
         <div className="leaderboard-row student">
-          <p>6</p><p>Dharun K</p><p>4,680</p><p>12,900</p>
+          <p>6</p><p>Pavithran S</p><p>4,680</p><p>12,900</p>
+        </div>
+        <div className="leaderboard-row student">
+          <p>7</p><p>Tamizhoviyan S</p><p>4,600</p><p>13,100</p>
+        </div>
+        <div className="leaderboard-row student">
+          <p>8</p><p>Kavinesh D</p><p>4,600</p><p>13,100</p>
+        </div>
+        <div className="leaderboard-row student">
+          <p>9</p><p>Keerthana R</p><p>4,600</p><p>13,100</p>
+        </div>
+        <div className="leaderboard-row student">
+          <p>10</p><p>Ronisha K</p><p>4,600</p><p>13,100</p>
+        </div>
+        <div className="leaderboard-row student">
+          <p>11</p><p>Haffiza S</p><p>4,600</p><p>13,100</p>
         </div>
       </div>
     </>

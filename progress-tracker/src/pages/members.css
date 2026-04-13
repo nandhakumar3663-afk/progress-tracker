@@ -98,6 +98,7 @@
                 display:flex;
                 flex-direction: column;
                 flex:1;
+                min-width: 500px;
                 position: relative;
                 height: 240px;
                 overflow: scroll;
@@ -171,9 +172,11 @@
                     overflow: hidden;
                 }
                 .progress {
-                    height: 10px;
+                    
+                   flex: 1;
                     background: rgb(255, 255, 255);
-                    border-radius: 99px;
+                    height: 10px;
+                    border-bottom-right-radius:40%;
                 }
                 .max {
                     font-size: 12px;
@@ -258,3 +261,181 @@
                     color:white;
                     cursor: pointer;
                 }
+                
+
+@media (max-width: 1024px) {
+    .main-content {
+        flex-direction: column;
+        padding: 15px;
+    }
+    .box-1 {
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+    .box1 {
+        width: 140px;
+        margin-top: 45px;
+    }
+    .box-2 {
+        height: 300px;
+    }
+    .leaderboard {
+        width: 94%;
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 65px;
+        gap: 15px;
+    }
+    .image {
+        margin-left: 15px;
+        height: 40px;
+        width: 40px;
+    }
+    .name1, .name2 {
+        font-size: 16px;
+    }
+    .main-content {
+        gap: 15px;
+        padding: 10px;
+    }
+    .box-1 {
+        flex-wrap: wrap;
+        height: auto;
+        justify-content: space-around;
+        gap: 10px;
+        padding: 10px;
+    }
+    .box1 {
+        width: 120px;
+        height: 75px;
+        font-size: medium;
+        margin-top: 35px;
+    }
+    .box1-title, .box2-title {
+        font-size: medium;
+    }
+    .row > p {
+        width: 90px;
+        font-size: 14px;
+    }
+    .controls button {
+        width: 22px;
+        height: 22px;
+        font-size: 14px;
+    }
+    .controls span {
+        font-size: 14px;
+    }
+    .blue {
+        font-size: 14px;
+        padding: 2px 5px;
+    }
+    .max {
+        font-size: 11px;
+        min-width: 35px;
+    }
+    .rp, .ap {
+        gap: 20px;
+        font-size: 14px;
+    }
+    input {
+        height: 18px;
+        font-size: 13px;
+        width: 100px;
+    }
+    .leaderboard-row {
+        font-size: medium;
+    }
+    .leaderboard {
+        margin-left: 10px;
+        width: 93%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 55px;
+        gap: 10px;
+    }
+    .name1, .name2 {
+        font-size: 14px;
+    }
+    .main-content {
+        padding: 8px;
+        gap: 10px;
+    }
+    .box-1 {
+        justify-content: center;
+        gap: 8px;
+    }
+    .box1 {
+        width: 100px;
+        height: 70px;
+        padding: 5px;
+        margin-top: 30px;
+    }
+    .box1-name {
+        font-size: small;
+    }
+    .box-2 {
+        padding: 12px;
+        height: 260px;
+    }
+    .box-3 {
+        margin-top: 30px;
+        margin-left: 0;
+    }
+    .row {
+        gap: 6px;
+        margin-bottom: 10px;
+    }
+    .row > p {
+        width: 75px;
+        font-size: 12px;
+    }
+    .controls button {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+    .controls span, .blue {
+        font-size: 12px;
+    }
+    .progress-bar {
+        height: 8px;
+    }
+    .max {
+        font-size: 10px;
+        min-width: 28px;
+    }
+    .rp, .ap {
+        gap: 10px;
+        font-size: 12px;
+    }
+    input {
+        width: 80px;
+        height: 16px;
+        font-size: 12px;
+    }
+    .saveprogress {
+        font-size: medium;
+        padding: 4px 10px;
+    }
+    .leaderboard-row {
+        font-size: small;
+    }
+    .leaderboard-row p {
+        font-size: 12px;
+    }
+    .leaderboard {
+        margin-left: 8px;
+        width: 90%;
+    }
+}
