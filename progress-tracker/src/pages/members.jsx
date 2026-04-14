@@ -385,11 +385,11 @@ export default function Members() {
             </div>
             <div className="rp">
               <p>Reward point</p>
-              <input type="number" placeHolder="Enter Your RP" />
+              <input type="number" placeholder="Enter Your RP" />
             </div>
             <div className="ap">
               <p>Activity point</p>
-              <input type="number" placeHolder="Enter Your AP"/>
+              <input type="number" placeholder="Enter Your AP"/>
             </div>
             <center>
               <button className="saveprogress">Save Progress</button>
