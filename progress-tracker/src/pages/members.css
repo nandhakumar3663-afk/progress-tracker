@@ -236,7 +236,7 @@
                 .leaderboard-row{
                     display:grid;
                     grid-template-columns: 1fr 1fr 1fr 1fr;
-                    border-bottom: 1px solid #b2d8d8;
+                    border-bottom: 1px solid oklch(85.499% 0.03998 196.563);
                     color:#1a7a6e;
                     font-size: large;
                     font-weight: 600;

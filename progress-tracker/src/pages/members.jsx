@@ -11,7 +11,7 @@ import P from "../assets/P.jpg"
 import R from "../assets/R.jpg"
 export default function Members() {
     const location = useLocation();
-    const name = location.state?.name
+    const name = location.state?.name?.toUpperCase()
     const [htmlprogress,sethtmlprogress] = useState(0);
     const [cprogress,setcprogress] = useState(0);
     const [linuxprogress,setlinuxprogress] = useState(0);
@@ -30,7 +30,53 @@ export default function Members() {
     const [nodewidth,setnodewidth] = useState(0);
     const [sawidth,setsawidth] = useState(0);
     const [linuxwidth,setlinuxwidth] = useState(0);
+
     
+    const studentdata = [{id: "7376251cs307",
+      displayName: "Nandha Kumar PS",
+      rank: 1,
+      rewardpoints: 3500,activitypoints: 10000
+    },{id: "7376251cs329",
+      displayName: "Pavithran S",
+      rank: 1,
+      rewardpoints: 3500,activitypoints: 10000
+    },{id: "7376251cs3247",
+      displayName: "Kavinesh D",
+      rank: 1,
+      rewardpoints: 3500,activitypoints: 10000
+    },{id: "7376251cs110",
+      displayName: "Akash J",
+      rank: 1,
+      rewardpoints: 3500,activitypoints: 10000
+    },{id: "7376251cs167",
+      displayName: "Dhinesh R",
+      rank: 1,
+      rewardpoints: 3500,activitypoints: 10000
+    },{id: "7376251cs185",
+      displayName: "Gokul BJ",
+      rank: 1,
+      rewardpoints: 3500,activitypoints: 10000
+    },{id: "7376251cs196",
+      displayName: "Haffiza",
+      rank: 1,
+      rewardpoints: 3500,activitypoints: 10000
+    },{id: "7376251cs254",
+      displayName: "Keerthanna R",
+      rank: 1,
+      rewardpoints: 3500,activitypoints: 10000
+    },{id: "7376251cs353",
+      displayName: "Rahul S",
+      rank: 1,
+      rewardpoints: 3500,activitypoints: 10000
+  },{id: "7376251cs372",
+      displayName: "Ronisha K",
+      rank: 1,
+      rewardpoints: 3500,activitypoints: 10000
+    },{id: "7376251cs443",
+      displayName: "Tamizhoviyan S",
+      rank: 1,
+      rewardpoints: 3500,activitypoints: 10000
+    }]
     
     const profile = {A,D,G,H,K,N,P,R}
     const getprofileimage = (name)=>{
@@ -39,9 +85,10 @@ export default function Members() {
             return profile[firstletter];
         }
     }
+    
   return (
     <>
-      <div className="header">
+      <div className="header" >
         <div className="image">
           <img className="imagetext" src={getprofileimage(name)} alt="profile" />
         </div>
@@ -360,39 +407,21 @@ export default function Members() {
           <p>Reward Points</p>
           <p>Activity Points</p>
         </div>
-        <div className="leaderboard-row student">
-          <p>1</p><p>Rahul S</p><p>3,500</p><p>10,200</p>
-        </div>
-        <div className="leaderboard-row student">
-          <p>2</p><p>Akash J</p><p>5,000</p><p>12,400</p>
-        </div>
-        <div className="leaderboard-row student">
-          <p>3</p><p>Dhinesh R</p><p>4,600</p><p>13,100</p>
-        </div>
-        <div className="leaderboard-row student">
-          <p>4</p><p>NandhaKumar PS</p><p>4,000</p><p>12,100</p>
-        </div>
-        <div className="leaderboard-row student">
-          <p>5</p><p>Gokul BJ</p><p>2,300</p><p>9,100</p>
-        </div>
-        <div className="leaderboard-row student">
-          <p>6</p><p>Pavithran S</p><p>4,680</p><p>12,900</p>
-        </div>
-        <div className="leaderboard-row student">
-          <p>7</p><p>Tamizhoviyan S</p><p>4,600</p><p>13,100</p>
-        </div>
-        <div className="leaderboard-row student">
-          <p>8</p><p>Kavinesh D</p><p>4,600</p><p>13,100</p>
-        </div>
-        <div className="leaderboard-row student">
-          <p>9</p><p>Keerthana R</p><p>4,600</p><p>13,100</p>
-        </div>
-        <div className="leaderboard-row student">
-          <p>10</p><p>Ronisha K</p><p>4,600</p><p>13,100</p>
-        </div>
-        <div className="leaderboard-row student">
-          <p>11</p><p>Haffiza S</p><p>4,600</p><p>13,100</p>
-        </div>
+                
+          {studentdata.map((student,index) => (
+              <div 
+              key={student.id}
+              className="leaderboard-row student"
+                style={{backgroundColor: student.id===name ? "#0080804D":undefined}}
+
+              >
+                <p>{index + 1}</p>
+            <p>{student.displayName}</p>
+            <p>{student.rewardpoints.toLocaleString()}</p>
+            <p>{student.activitypoints.toLocaleString()}</p>
+              </div>
+          ))}
+                
       </div>
     </>
   );
