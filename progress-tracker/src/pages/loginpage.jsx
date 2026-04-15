@@ -22,8 +22,17 @@ import './loginpage.css'
     const handlelogin= ()=>{
         const name = users[reg.toLowerCase()]
         if(name){
-                   navigate("/members",{state: {name: name}}) 
-                }
+    
+    localStorage.setItem("currentUser", reg.toLowerCase());
+
+    
+    navigate("/members", {
+        state: { 
+            name: name,
+            id: reg.toLowerCase()
+        }
+    });
+}
                 else{
                     seterror("• Invalid Reg Number")
                 }
