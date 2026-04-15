@@ -25,7 +25,7 @@ body {
     align-self: center;
     background-color: rgb(206, 206, 206);
     width: min(389px, 80%);
-    height: 400px;
+    height: 470px;
     border-radius: 25px;
     box-shadow: 5px 5px 30px black;
 }
@@ -40,6 +40,7 @@ body {
 
 .login-text p {
     padding-left: 38px;
+    margin: 12px 0 10px;
     font-size: larger;
     color: black;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -57,7 +58,7 @@ body {
     border-radius: 5px;
     border-style: none;
     padding-left: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     font-size: large;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     cursor: pointer;
@@ -84,6 +85,31 @@ body {
     background: #019875;
     transform: scale(1.05);
 }
+
+.login-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.login-text .login-tabs button {
+    width: 130px;
+    height: 32px;
+    margin-left: 0;
+    background-color: #ccc;
+    color: #333;
+}
+
+.login-text .login-tabs button.active {
+    background-color: teal;
+    color: white;
+}
+
+.loginbtn {
+    margin-top: 10px;
+}
+
 .login-text .error-msg {
     color: red !important;
     font-size: 14px;
