@@ -1,3 +1,6 @@
+import MembersLive from "./membersLive";
+export default MembersLive;
+/*
 import "./members.css";
 import {useLocation} from "react-router-dom"
 import {useState, useEffect} from "react"
@@ -18,17 +21,17 @@ export default function Members() {
     
     useEffect(() => {
         if (location.state?.id) {
-            localStorage.setItem("currentUser", location.state.id);
+            legacyStorage.setItem("currentUser", location.state.id);
         }
     }, [location.state]);
 
-    const userId = localStorage.getItem("currentUser");
+    const userId = legacyStorage.getItem("currentUser");
     
 
 
     const loadFromStorage = (key, fallback) => {
         try {
-            const stored = localStorage.getItem(`progress_${userId}_${key}`);
+            const stored = legacyStorage.getItem(`progress_${userId}_${key}`);
             return stored !== null ? JSON.parse(stored) : fallback;
         } catch {
             return fallback;
@@ -62,7 +65,7 @@ export default function Members() {
     const [savedSkills, setsavedSkills] = useState(() => loadFromStorage("skillsCompleted", 0));
 
     const [studentdata, setstudentdata] = useState(() => {
-        const stored = localStorage.getItem("students_data");
+        const stored = legacyStorage.getItem("students_data");
         if (stored) return JSON.parse(stored);
 
         return [
@@ -108,9 +111,9 @@ export default function Members() {
         const rp = parseInt(rpInput) || 0;
         const ap = parseInt(apInput) || 0;
 
-        localStorage.setItem(`progress_${userId}_rp`, JSON.stringify(rp));
-        localStorage.setItem(`progress_${userId}_ap`, JSON.stringify(ap));
-        localStorage.setItem(`progress_${userId}_skillsCompleted`, JSON.stringify(skills));
+        legacyStorage.setItem(`progress_${userId}_rp`, JSON.stringify(rp));
+        legacyStorage.setItem(`progress_${userId}_ap`, JSON.stringify(ap));
+        legacyStorage.setItem(`progress_${userId}_skillsCompleted`, JSON.stringify(skills));
 
         setsavedRP(rp);
         setsavedAP(ap);
@@ -129,7 +132,7 @@ export default function Members() {
 
         updatedStudents.sort((a, b) => b.activitypoints - a.activitypoints);
 
-        localStorage.setItem("students_data", JSON.stringify(updatedStudents));
+        legacyStorage.setItem("students_data", JSON.stringify(updatedStudents));
         setstudentdata(updatedStudents);
 
         alert("Progress saved ✔️");
@@ -320,3 +323,4 @@ export default function Members() {
         </>
     );
 }
+*/
