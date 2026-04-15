@@ -730,37 +730,93 @@
     cursor: not-allowed;
 }
 
-.members-chart-bars {
+.members-chart-heading {
     display: flex;
-    flex-direction: column;
-    gap: 13px;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
 }
 
-.members-chart-row {
-    display: grid;
-    grid-template-columns: 150px minmax(120px, 1fr) 52px;
+.members-chart-legend {
+    display: flex;
     align-items: center;
     gap: 12px;
-}
-
-.members-chart-row span {
-    font-weight: 700;
-    color: #315855;
-}
-
-.members-chart-row small {
     color: #5e7d79;
+    font-size: 12px;
     font-weight: 700;
 }
 
-.members-chart-track {
-    background: #dcefeb;
+.members-chart-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
 }
 
-.members-chart-track div {
-    height: 100%;
-    border-radius: 8px;
+.members-chart-legend i {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+}
+
+.members-chart-legend .is-complete {
     background: teal;
+}
+
+.members-chart-legend .is-remaining {
+    background: #cfe5e2;
+}
+
+.members-chart-wrap {
+    width: 100%;
+    overflow-x: auto;
+    padding-top: 4px;
+}
+
+.members-skill-chart {
+    width: 100%;
+    min-width: 650px;
+    height: 270px;
+    display: block;
+}
+
+.members-grid-line {
+    stroke: rgba(0, 128, 128, 0.11);
+    stroke-width: 1;
+}
+
+.members-axis-line {
+    stroke: rgba(7, 83, 77, 0.28);
+    stroke-width: 1.5;
+}
+
+.members-axis-label {
+    fill: #6d8885;
+    font-size: 12px;
+    font-weight: 700;
+    text-anchor: end;
+}
+
+.members-bar-complete {
+    fill: teal;
+}
+
+.members-bar-remaining {
+    fill: #cfe5e2;
+}
+
+.members-bar-value {
+    fill: #315855;
+    font-size: 12px;
+    font-weight: 800;
+    text-anchor: middle;
+}
+
+.members-bar-label {
+    fill: #315855;
+    font-size: 12px;
+    font-weight: 800;
+    text-anchor: middle;
 }
 
 .members-points-card {
@@ -883,10 +939,14 @@
         grid-template-columns: 1fr;
     }
 
-    .members-skill-row,
-    .members-chart-row {
+    .members-skill-row {
         grid-template-columns: 1fr;
         align-items: stretch;
+    }
+
+    .members-chart-heading {
+        flex-direction: column;
+        gap: 4px;
     }
 
     .members-controls {

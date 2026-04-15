@@ -27,6 +27,15 @@ function getInitials(displayName = "") {
         .join("") || "P";
 }
 
+function getShortSkillLabel(label) {
+    return label
+        .replace(" programming", "")
+        .replace("System Administration", "Sys Admin")
+        .replace("Computer Networking", "Networks")
+        .replace("Java Script", "JS")
+        .replace("Git Hub", "GitHub");
+}
+
 export default function MembersLive() {
     const location = useLocation();
     const navigate = useNavigate();
@@ -171,6 +180,14 @@ export default function MembersLive() {
 
     const completedSkills = countSkillsCompleted();
     const displayName = location.state?.name || student.displayName;
+    const chartMax = Math.max(...SKILLS.map((skill) => skill.max));
+    const chartTop = 24;
+    const chartBottom = 206;
+    const chartLeft = 58;
+    const barStep = 65;
+    const barWidth = 32;
+    const chartScale = (chartBottom - chartTop) / chartMax;
+    const chartTicks = [chartMax, Math.ceil(chartMax / 2), 0];
 
     return (
         <div className="members-page">
@@ -240,20 +257,73 @@ export default function MembersLive() {
 
                 <section className="members-mid-row">
                     <div className="members-chart-card">
-                        <h2>Skill Progress Overview</h2>
+                        <div className="members-chart-heading">
+                            <h2>Skill Progress Overview</h2>
+                            <div className="members-chart-legend">
+                                <span><i className="is-complete"></i>Completed</span>
+                                <span><i className="is-remaining"></i>Remaining</span>
+                            </div>
+                        </div>
                         {isLoading ? (
                             <p className="loading-panel">Loading live progress...</p>
                         ) : (
-                            <div className="members-chart-bars">
-                                {SKILLS.map((skill) => (
-                                    <div className="members-chart-row" key={skill.key}>
-                                        <span>{skill.label}</span>
-                                        <div className="members-chart-track">
-                                            <div style={{ width: getSkillWidth(skill) }}></div>
-                                        </div>
-                                        <small>{progress[skill.key]}/{skill.max}</small>
-                                    </div>
-                                ))}
+                            <div className="members-chart-wrap">
+                                <svg className="members-skill-chart" viewBox="0 0 680 270" role="img" aria-label="Skill progress overview chart">
+                                    {chartTicks.map((tick) => {
+                                        const y = chartBottom - tick * chartScale;
+
+                                        return (
+                                            <g key={tick}>
+                                                <text className="members-axis-label" x="42" y={y + 4}>{tick}</text>
+                                                <line className="members-grid-line" x1="58" y1={y} x2="650" y2={y} />
+                                            </g>
+                                        );
+                                    })}
+                                    <line className="members-axis-line" x1="58" y1={chartTop} x2="58" y2={chartBottom} />
+                                    <line className="members-axis-line" x1="58" y1={chartBottom} x2="650" y2={chartBottom} />
+                                    {SKILLS.map((skill, index) => {
+                                        const value = Number(progress[skill.key]) || 0;
+                                        const completed = Math.min(value, skill.max);
+                                        const remaining = Math.max(0, skill.max - completed);
+                                        const completedHeight = completed * chartScale;
+                                        const remainingHeight = remaining * chartScale;
+                                        const x = chartLeft + 28 + index * barStep;
+                                        const yRemaining = chartBottom - completedHeight - remainingHeight;
+                                        const yCompleted = chartBottom - completedHeight;
+
+                                        return (
+                                            <g className="members-chart-bar" key={skill.key}>
+                                                <title>{`${skill.label}: ${completed} of ${skill.max}`}</title>
+                                                {remaining > 0 && (
+                                                    <rect
+                                                        className="members-bar-remaining"
+                                                        x={x}
+                                                        y={yRemaining}
+                                                        width={barWidth}
+                                                        height={remainingHeight}
+                                                        rx="7"
+                                                    />
+                                                )}
+                                                {completed > 0 && (
+                                                    <rect
+                                                        className="members-bar-complete"
+                                                        x={x}
+                                                        y={yCompleted}
+                                                        width={barWidth}
+                                                        height={completedHeight}
+                                                        rx="7"
+                                                    />
+                                                )}
+                                                <text className="members-bar-value" x={x + barWidth / 2} y={yRemaining - 8}>
+                                                    {completed}/{skill.max}
+                                                </text>
+                                                <text className="members-bar-label" x={x + barWidth / 2} y="240">
+                                                    {getShortSkillLabel(skill.label)}
+                                                </text>
+                                            </g>
+                                        );
+                                    })}
+                                </svg>
                             </div>
                         )}
                     </div>
