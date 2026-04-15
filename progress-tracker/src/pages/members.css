@@ -460,3 +460,440 @@
         width: 90%;
     }
 }
+
+.members-page {
+    min-height: 100vh;
+    background: #f4fbfa;
+    color: #123b38;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.members-page * {
+    box-sizing: border-box;
+}
+
+.members-header {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 12px 32px;
+    background: linear-gradient(135deg, #064542 0%, teal 70%, #2a9d8f 100%);
+    color: white;
+    box-shadow: 0 2px 14px rgba(0, 68, 68, 0.28);
+}
+
+.members-header-left,
+.members-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.members-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: white;
+    color: teal;
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.members-header-name,
+.members-header-sub {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.members-header-name {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.members-header-sub {
+    margin-top: 2px;
+    font-size: 13px;
+    opacity: 0.78;
+}
+
+.members-header-badge,
+.members-logout {
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.members-header-badge {
+    padding: 7px 13px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.members-logout {
+    border: 0;
+    padding: 8px 18px;
+    background: white;
+    color: teal;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.members-logout:hover {
+    background: #e2f3f1;
+}
+
+.members-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 28px 32px 34px;
+}
+
+.members-top-row {
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) minmax(420px, 1.55fr);
+    gap: 20px;
+}
+
+.members-mid-row {
+    display: grid;
+    grid-template-columns: minmax(360px, 1.35fr) minmax(280px, 0.8fr);
+    gap: 20px;
+}
+
+.members-stats-card,
+.members-progress-card {
+    border-radius: 8px;
+    padding: 24px;
+    background: linear-gradient(135deg, #064542, teal);
+    color: white;
+    box-shadow: 0 4px 24px rgba(0, 80, 80, 0.14);
+}
+
+.members-progress-card {
+    max-height: 330px;
+    overflow-y: auto;
+    scrollbar-color: rgba(255, 255, 255, 0.45) transparent;
+    scrollbar-width: thin;
+}
+
+.members-chart-card,
+.members-points-card,
+.members-leaderboard-card {
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 4px 24px rgba(0, 80, 80, 0.11);
+}
+
+.members-chart-card,
+.members-points-card {
+    padding: 24px;
+}
+
+.members-stats-card h2,
+.members-progress-card h2,
+.members-chart-card h2,
+.members-points-card h2,
+.members-leaderboard-card h2 {
+    margin: 0 0 16px;
+    padding: 0;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.members-chart-card h2,
+.members-points-card h2,
+.members-leaderboard-card h2 {
+    color: #07534d;
+}
+
+.members-leaderboard-card h2 {
+    padding: 20px 24px 0;
+}
+
+.members-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.members-stat-box {
+    min-height: 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    padding: 14px 10px;
+    background: rgba(255, 255, 255, 0.13);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    text-align: center;
+}
+
+.members-stat-box strong {
+    font-size: 28px;
+    line-height: 1.1;
+}
+
+.members-stat-box span {
+    margin-top: 6px;
+    font-size: 12px;
+    opacity: 0.78;
+}
+
+.members-skill-row {
+    display: grid;
+    grid-template-columns: 145px 88px minmax(120px, 1fr) 48px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.members-skill-name {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.members-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.members-controls button {
+    width: 26px;
+    height: 26px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.members-controls button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.members-controls span,
+.members-percent {
+    font-weight: 700;
+    text-align: center;
+}
+
+.members-bar-wrap,
+.members-chart-track {
+    height: 10px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.members-bar-fill {
+    height: 100%;
+    background: white;
+    border-radius: 8px;
+}
+
+.members-save {
+    width: fit-content;
+    min-width: 145px;
+    border: 0;
+    border-radius: 8px;
+    padding: 9px 18px;
+    background: white;
+    color: teal;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 800;
+    font-family: inherit;
+}
+
+.members-save:hover {
+    background: #0f8f86;
+    color: white;
+}
+
+.members-save:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.members-chart-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.members-chart-row {
+    display: grid;
+    grid-template-columns: 150px minmax(120px, 1fr) 52px;
+    align-items: center;
+    gap: 12px;
+}
+
+.members-chart-row span {
+    font-weight: 700;
+    color: #315855;
+}
+
+.members-chart-row small {
+    color: #5e7d79;
+    font-weight: 700;
+}
+
+.members-chart-track {
+    background: #dcefeb;
+}
+
+.members-chart-track div {
+    height: 100%;
+    border-radius: 8px;
+    background: teal;
+}
+
+.members-points-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.members-points-card label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    color: #315855;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.members-points-card label span {
+    color: #6d8885;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.members-points-card input {
+    width: 100%;
+    height: 38px;
+    border: 1px solid #c6ddda;
+    border-radius: 8px;
+    padding: 0 11px;
+    color: #123b38;
+    cursor: text;
+    font: inherit;
+}
+
+.members-points-card .members-save {
+    background: teal;
+    color: white;
+}
+
+.members-points-card .members-save:hover {
+    background: #075f59;
+}
+
+.members-table-wrap {
+    overflow-x: auto;
+}
+
+.members-leaderboard-card table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse;
+}
+
+.members-leaderboard-card th,
+.members-leaderboard-card td {
+    padding: 14px 24px;
+    border-bottom: 1px solid #e4f0ee;
+    text-align: left;
+}
+
+.members-leaderboard-card th {
+    color: teal;
+    background: #e1f2f0;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.members-leaderboard-card tr.is-current {
+    background: #e9f7f5;
+    color: #07534d;
+    font-weight: 800;
+}
+
+.members-rank {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #d9efec;
+    color: teal;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.loading-panel-dark {
+    color: #315855;
+}
+
+.members-page .storage-status {
+    margin: 18px 32px 0;
+}
+
+@media (max-width: 980px) {
+    .members-top-row,
+    .members-mid-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 680px) {
+    .members-header {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 16px;
+    }
+
+    .members-header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .members-content {
+        padding: 18px 14px 26px;
+    }
+
+    .members-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .members-skill-row,
+    .members-chart-row {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+    }
+
+    .members-controls {
+        justify-content: flex-start;
+    }
+
+    .members-header-badge {
+        display: none;
+    }
+}
