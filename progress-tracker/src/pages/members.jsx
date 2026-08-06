@@ -1,6 +1,6 @@
 import MembersLive from "./membersLive";
 export default MembersLive;
-/*
+
 import "./members.css";
 import {useLocation} from "react-router-dom"
 import {useState, useEffect} from "react"
@@ -323,4 +323,4 @@ export default function Members() {
         </>
     );
 }
-*/
+
