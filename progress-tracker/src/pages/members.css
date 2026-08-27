@@ -16,7 +16,7 @@
             }
             .image{
                 margin-left:30px;
-                background-color: white;
+                background-color: var(--text-main);
                 height:50px;
                 width:50px;
                 display:flex;
@@ -33,7 +33,7 @@
             }
             .name1,.name2 {
                 font-size:20px;
-                color:white;
+                color: var(--text-main);
                 margin:0;
             }
             .name{
@@ -55,7 +55,7 @@
                 height:280px;
                 width: 500px;
                 border-radius: 17px;
-                color:white;
+                color: var(--text-main);
                 display:flex;
                 justify-content: center;
                 position: relative;
@@ -84,7 +84,7 @@
                 left:25px;
                 font-size: larger;
                 font-weight: bold;
-                color:white;
+                color: var(--text-main);
             }
             .box1-name{
                 margin:0;
@@ -94,7 +94,7 @@
                 background-color: var(--primary);
                 border-radius: 10px;
                 padding: 20px;
-                color: white;
+                color: var(--text-main);
                 display:flex;
                 flex-direction: column;
                 flex:1;
@@ -144,7 +144,7 @@
                     height: 26px;
                     border-radius: 4px;
                     border: 1px solid white;
-                    background: white;
+                    background: var(--surface);
                     color: var(--primary);
                     font-size: 17px;
                     cursor: pointer;
@@ -208,7 +208,7 @@
                     padding: 5px;
                     border-radius: 10px;
                     cursor: pointer;
-                    background-color: white;
+                    background-color: var(--text-main);
                     font-size: large;
                     color:var(--primary);
                     border-style:none;
@@ -219,7 +219,7 @@
                 .saveprogress:hover{
                 background: var(--primary-hover);
                 transform: scale(1.05);
-                color:white;
+                color: var(--text-main);
             
                 }
                 .saveprogress:disabled{
@@ -239,7 +239,7 @@
                     color: #8f1f17;
                 }
                 .loading-panel{
-                    color: white;
+                    color: var(--text-main);
                     font-size: 17px;
                     font-weight: bold;
                 }
@@ -279,7 +279,7 @@
                 }
                 .leaderboard-row.student:hover{
                     background-color:var(--primary);
-                    color:white;
+                    color: var(--text-main);
                     cursor: pointer;
                 }
                 
@@ -465,7 +465,7 @@
     min-height: 100vh;
     background: var(--bg-color);
     color: var(--text-main);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', 'Inter', sans-serif;
 }
 
 .members-page * {
@@ -480,7 +480,7 @@
     gap: 18px;
     padding: 12px 32px;
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 70%, var(--primary-light) 100%);
-    color: white;
+    color: var(--text-main);
     box-shadow: 0 2px 14px rgba(0, 68, 68, 0.28);
 }
 
@@ -499,7 +499,7 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    background: white;
+    background: var(--surface);
     color: var(--primary);
     border: 2px solid rgba(255, 255, 255, 0.55);
     font-size: 18px;
@@ -510,7 +510,7 @@
 .members-header-sub {
     margin: 0;
     padding: 0;
-    color: white;
+    color: var(--text-main);
 }
 
 .members-header-name {
@@ -540,10 +540,10 @@
 .members-logout {
     border: 0;
     padding: 8px 18px;
-    background: white;
+    background: var(--surface);
     color: var(--primary);
     cursor: pointer;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', 'Inter', sans-serif;
 }
 
 .members-logout:hover {
@@ -574,7 +574,7 @@
     border-radius: 8px;
     padding: 24px;
     background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-    color: white;
+    color: var(--text-main);
     box-shadow: 0 4px 24px rgba(0, 80, 80, 0.14);
 }
 
@@ -589,7 +589,7 @@
 .members-points-card,
 .members-leaderboard-card {
     border-radius: 8px;
-    background: white;
+    background: var(--surface);
     box-shadow: 0 4px 24px rgba(0, 80, 80, 0.11);
 }
 
@@ -676,7 +676,7 @@
     border: 1px solid rgba(255, 255, 255, 0.7);
     border-radius: 6px;
     background: rgba(255, 255, 255, 0.12);
-    color: white;
+    color: var(--text-main);
     cursor: pointer;
     font-size: 17px;
     font-weight: 700;
@@ -702,7 +702,7 @@
 
 .members-bar-fill {
     height: 100%;
-    background: white;
+    background: var(--surface);
     border-radius: 8px;
 }
 
@@ -712,17 +712,17 @@
     border: 0;
     border-radius: 8px;
     padding: 9px 18px;
-    background: white;
+    background: var(--surface);
     color: var(--primary);
     cursor: pointer;
     font-size: 15px;
     font-weight: 800;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', 'Inter', sans-serif;
 }
 
 .members-save:hover {
     background: var(--primary-hover);
-    color: white;
+    color: var(--text-main);
 }
 
 .members-save:disabled {
@@ -764,7 +764,7 @@
 }
 
 .members-chart-legend .is-remaining {
-    background: rgba(120, 76, 230, 0.2);
+    background: rgba(var(--primary-rgb), 0.2);
 }
 
 .members-chart-wrap {
@@ -802,7 +802,7 @@
 }
 
 .members-bar-remaining {
-    fill: rgba(120, 76, 230, 0.2);
+    fill: rgba(var(--primary-rgb), 0.2);
 }
 
 .members-bar-value {
@@ -853,7 +853,7 @@
 
 .members-points-card .members-save {
     background: var(--primary);
-    color: white;
+    color: var(--text-main);
 }
 
 .members-points-card .members-save:hover {
