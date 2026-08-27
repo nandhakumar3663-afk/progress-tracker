@@ -7,7 +7,7 @@
             }
             .header{
                 display:flex;
-                background-color: teal;
+                background-color: var(--primary);
                 gap:30px;
                 align-items: center;
                 border-bottom-left-radius: 5px;
@@ -51,7 +51,7 @@
                 padding-right:30px;
             }
             .box-1{
-                background-color: teal;
+                background-color: var(--primary);
                 height:280px;
                 width: 500px;
                 border-radius: 17px;
@@ -91,7 +91,7 @@
                 font-size: large;
             }
             .box-2 {
-                background-color: teal;
+                background-color: var(--primary);
                 border-radius: 10px;
                 padding: 20px;
                 color: white;
@@ -106,7 +106,7 @@
                 overflow-y: scroll;
             }
             .box-2{
-                scrollbar-color:#2a9d8f #f0f0f0;
+                scrollbar-color:var(--primary-light) #f0f0f0;
             }
             .box-2::-webkit-scrollbar-track {
                 border-radius: 100px;
@@ -145,7 +145,7 @@
                     border-radius: 4px;
                     border: 1px solid white;
                     background: white;
-                    color: teal;
+                    color: var(--primary);
                     font-size: 17px;
                     cursor: pointer;
                     font-weight: bold;
@@ -210,14 +210,14 @@
                     cursor: pointer;
                     background-color: white;
                     font-size: large;
-                    color:teal;
+                    color:var(--primary);
                     border-style:none;
                     padding: 5px;
                     font-weight: bolder;
                     transition: 0.3s;
                 }
                 .saveprogress:hover{
-                background: #019875;
+                background: var(--primary-hover);
                 transform: scale(1.05);
                 color:white;
             
@@ -258,7 +258,7 @@
                     display:grid;
                     grid-template-columns: 1fr 1fr 1fr 1fr;
                     border-bottom: 1px solid oklch(85.499% 0.03998 196.563);
-                    color:#1a7a6e;
+                    color:var(--text-main);
                     font-size: large;
                     font-weight: 600;
                     transition: all 0.3s;
@@ -272,13 +272,13 @@
                 .leaderboard-row.heading{
                     font-weight: bold;
                     background-color: rgb(0, 128, 128,0.3);
-                    color:teal;
+                    color:var(--primary);
                     border-top-left-radius: 9.5px;
                     border-top-right-radius: 9.5px;
 
                 }
                 .leaderboard-row.student:hover{
-                    background-color:teal;
+                    background-color:var(--primary);
                     color:white;
                     cursor: pointer;
                 }
@@ -463,9 +463,9 @@
 
 .members-page {
     min-height: 100vh;
-    background: #f4fbfa;
-    color: #123b38;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
 }
 
 .members-page * {
@@ -479,7 +479,7 @@
     justify-content: space-between;
     gap: 18px;
     padding: 12px 32px;
-    background: linear-gradient(135deg, #064542 0%, teal 70%, #2a9d8f 100%);
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 70%, var(--primary-light) 100%);
     color: white;
     box-shadow: 0 2px 14px rgba(0, 68, 68, 0.28);
 }
@@ -500,7 +500,7 @@
     justify-content: center;
     flex-shrink: 0;
     background: white;
-    color: teal;
+    color: var(--primary);
     border: 2px solid rgba(255, 255, 255, 0.55);
     font-size: 18px;
     font-weight: 700;
@@ -541,9 +541,9 @@
     border: 0;
     padding: 8px 18px;
     background: white;
-    color: teal;
+    color: var(--primary);
     cursor: pointer;
-    font-family: inherit;
+    font-family: 'Inter', sans-serif;
 }
 
 .members-logout:hover {
@@ -573,7 +573,7 @@
 .members-progress-card {
     border-radius: 8px;
     padding: 24px;
-    background: linear-gradient(135deg, #064542, teal);
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
     color: white;
     box-shadow: 0 4px 24px rgba(0, 80, 80, 0.14);
 }
@@ -614,7 +614,7 @@
 .members-chart-card h2,
 .members-points-card h2,
 .members-leaderboard-card h2 {
-    color: #07534d;
+    color: var(--primary-dark);
 }
 
 .members-leaderboard-card h2 {
@@ -713,15 +713,15 @@
     border-radius: 8px;
     padding: 9px 18px;
     background: white;
-    color: teal;
+    color: var(--primary);
     cursor: pointer;
     font-size: 15px;
     font-weight: 800;
-    font-family: inherit;
+    font-family: 'Inter', sans-serif;
 }
 
 .members-save:hover {
-    background: #0f8f86;
+    background: var(--primary-hover);
     color: white;
 }
 
@@ -760,11 +760,11 @@
 }
 
 .members-chart-legend .is-complete {
-    background: teal;
+    background: var(--primary);
 }
 
 .members-chart-legend .is-remaining {
-    background: #cfe5e2;
+    background: rgba(120, 76, 230, 0.2);
 }
 
 .members-chart-wrap {
@@ -798,11 +798,11 @@
 }
 
 .members-bar-complete {
-    fill: teal;
+    fill: var(--primary);
 }
 
 .members-bar-remaining {
-    fill: #cfe5e2;
+    fill: rgba(120, 76, 230, 0.2);
 }
 
 .members-bar-value {
@@ -846,13 +846,13 @@
     border: 1px solid #c6ddda;
     border-radius: 8px;
     padding: 0 11px;
-    color: #123b38;
+    color: var(--text-main);
     cursor: text;
     font: inherit;
 }
 
 .members-points-card .members-save {
-    background: teal;
+    background: var(--primary);
     color: white;
 }
 
@@ -878,7 +878,7 @@
 }
 
 .members-leaderboard-card th {
-    color: teal;
+    color: var(--primary);
     background: #e1f2f0;
     font-size: 13px;
     text-transform: uppercase;
@@ -887,7 +887,7 @@
 
 .members-leaderboard-card tr.is-current {
     background: #e9f7f5;
-    color: #07534d;
+    color: var(--primary-dark);
     font-weight: 800;
 }
 
@@ -899,7 +899,7 @@
     justify-content: center;
     border-radius: 50%;
     background: #d9efec;
-    color: teal;
+    color: var(--primary);
     font-size: 13px;
     font-weight: 800;
 }
