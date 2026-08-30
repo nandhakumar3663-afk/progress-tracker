@@ -1,6 +1,7 @@
 import MembersLive from "./membersLive";
 export default MembersLive;
 
+/*
 import "./members.css";
 import {useLocation} from "react-router-dom"
 import {useState, useEffect} from "react"
@@ -13,7 +14,7 @@ import N from "../assets/N.jpg"
 import P from "../assets/P.jpg"
 import R from "../assets/R.jpg"
 
-export default function Members() {
+function Members() {
 
     const location = useLocation();
     const name = location.state?.name?.toUpperCase()
@@ -323,4 +324,5 @@ export default function Members() {
         </>
     );
 }
+*/
 
